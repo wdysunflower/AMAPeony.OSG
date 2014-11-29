@@ -1,4 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
+    <file url="file://$PROJECT_DIR$/res/drawable-xhdpi/ic_action_select_all_dark.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable-xhdpi/ic_drawer.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable-xhdpi/ic_menu_common.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable-xhdpi/ic_menu_moreoverflow_normal_holo_light.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable-xhdpi/md__category_background.9.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable-xhdpi/md__list_focused_holo.9.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable-xhdpi/md__list_longpressed_holo.9.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable-xhdpi/md__list_pressed_holo_dark.9.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable-xhdpi/md__list_selector_disabled_holo_dark.9.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable-xhdpi/menu_arrow_bottom.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable-xhdpi/menu_arrow_end.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable-xhdpi/menu_arrow_start.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable-xhdpi/menu_arrow_top.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable/md__list_selector_background_transition_holo_dark.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable/md__list_selector_holo_dark.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/layout/menu_row_category.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/layout/menu_row_item.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/values/attrs.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/values/colors.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/values/ids.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/values/styles.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/values/themes.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/peony/osg/model/Category.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/peony/osg/model/Item.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/peony/osg/view/adapter/MenuAdapter.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/peony/osg/view/fragment/TestFragment.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/peony/osg/view/widget/menudrawer/BuildLayerFrameLayout.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/peony/osg/view/widget/menudrawer/ColorDrawable.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/peony/osg/view/widget/menudrawer/DraggableDrawer.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/peony/osg/view/widget/menudrawer/FloatScroller.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/peony/osg/view/widget/menudrawer/MenuDrawer.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/peony/osg/view/widget/menudrawer/NoClickThroughFrameLayout.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/peony/osg/view/widget/menudrawer/OverlayDrawer.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/peony/osg/view/widget/menudrawer/PeekInterpolator.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/peony/osg/view/widget/menudrawer/Position.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/peony/osg/view/widget/menudrawer/Scroller.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/peony/osg/view/widget/menudrawer/SinusoidalInterpolator.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/peony/osg/view/widget/menudrawer/SlideDrawable.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/peony/osg/view/widget/menudrawer/SlidingDrawer.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/peony/osg/view/widget/menudrawer/SmoothInterpolator.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/peony/osg/view/widget/menudrawer/StaticDrawer.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/peony/osg/view/widget/menudrawer/ViewHelper.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/peony/osg/view/widget/menudrawer/compat" charset="UTF-8" />
+  </component>
 </project>
