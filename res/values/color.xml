@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="action_bar_title_cl">#5fabd7</color>
+    <color name="action_bar_sp_cl">#37000000</color>
+    <color name="group_bar_title_cl">#a4bfcf</color>
 </resources>

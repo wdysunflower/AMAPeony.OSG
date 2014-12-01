@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="catalog_header">
+        <item>@array/catalog_one</item>
+        <item>@array/catalog_two</item>
+    </array>
+
+    <array name="catalog_one">
+        <item>@string/catalog_one_1</item>
+        <item>@string/catalog_one_2</item>
+        <item>@string/catalog_one_3</item>
+    </array>
+
+    <array name="catalog_two">
+        <item>@string/catalog_two_1</item>
+        <item>@string/catalog_two_2</item>
+        <item>@string/catalog_two_3</item>
+        <item>@string/catalog_two_4</item>
+    </array>
+</resources>

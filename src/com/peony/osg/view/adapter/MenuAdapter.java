@@ -8,8 +8,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 import com.peony.osg.R;
-import com.peony.osg.model.Category;
-import com.peony.osg.model.Item;
+import com.peony.osg.model.object.Category;
+import com.peony.osg.model.object.MenuItem;
 
 import java.util.List;
 
@@ -58,7 +58,7 @@ public class MenuAdapter extends BaseAdapter {
 
     @Override
     public int getItemViewType(int position) {
-        return getItem(position) instanceof Item ? 0 : 1;
+        return getItem(position) instanceof MenuItem ? 0 : 1;
     }
 
     @Override
@@ -68,7 +68,7 @@ public class MenuAdapter extends BaseAdapter {
 
     @Override
     public boolean isEnabled(int position) {
-        return getItem(position) instanceof Item;
+        return getItem(position) instanceof MenuItem;
     }
 
     @Override
@@ -83,10 +83,10 @@ public class MenuAdapter extends BaseAdapter {
 
         if (item instanceof Category) {
             if (contentView == null) {
-                contentView = LayoutInflater.from(mContext).inflate(R.layout.menu_row_category, parent, false);
+                contentView = LayoutInflater.from(mContext).inflate(R.layout.catalog_row_child, parent, false);
             }
 
-            ((TextView) contentView).setText(((Category) item).mTitle);
+            ((TextView) contentView).setText(((Category) item).mTitleRes);
 
         } else {
             if (contentView == null) {
@@ -94,11 +94,11 @@ public class MenuAdapter extends BaseAdapter {
             }
 
             TextView tv = (TextView) contentView;
-            tv.setText(((Item) item).mTitleRes);
+            tv.setText(((MenuItem) item).mTitleRes);
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
-                tv.setCompoundDrawablesRelativeWithIntrinsicBounds(((Item) item).mIconRes, 0, 0, 0);
+                tv.setCompoundDrawablesRelativeWithIntrinsicBounds(((MenuItem) item).mIconRes, 0, 0, 0);
             } else {
-                tv.setCompoundDrawablesWithIntrinsicBounds(((Item) item).mIconRes, 0, 0, 0);
+                tv.setCompoundDrawablesWithIntrinsicBounds(((MenuItem) item).mIconRes, 0, 0, 0);
             }
         }
         if (position == mActivePosition) {
