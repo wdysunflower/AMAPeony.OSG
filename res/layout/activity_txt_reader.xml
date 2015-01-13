@@ -29,6 +29,11 @@
               android:layout_height="@dimen/action_bar_sp_height"
               android:background="@color/action_bar_sp_cl"
               android:layout_alignParentTop="true"/>
+
+        <include android:layout_width="match_parent"
+                 android:layout_height="@dimen/tool_bar_float_height"
+                 layout="@layout/reader_tool_bar_bottom"
+                 android:layout_alignParentBottom="true"/>
     </RelativeLayout>
 
 </LinearLayout>

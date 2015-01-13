@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-    <include
+                android:layout_height="match_parent"
+                android:background="@color/group_bar_title_cl">
+    <com.amap.api.maps.MapView
+            android:id="@+id/map"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/action_bar_height"
-            layout="@layout/item_action_bar"/>
-
+            android:layout_height="match_parent">
+    </com.amap.api.maps.MapView>
 </RelativeLayout>

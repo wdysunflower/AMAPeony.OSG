@@ -16,5 +16,9 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="android-support-v4" level="project" />
+    <orderEntry type="library" name="AMap_3DMap_V2.3.1" level="project" />
+    <orderEntry type="library" name="AMap_Services_V2.3.1" level="project" />
+    <orderEntry type="library" name="Android_Location_V1.3.0" level="project" />
+    <orderEntry type="library" name="nineoldandroids-library-2.4.0" level="project" />
   </component>
 </module>

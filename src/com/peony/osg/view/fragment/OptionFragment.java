@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 import com.peony.osg.R;
 
 /**
@@ -22,7 +21,5 @@ public class OptionFragment extends Fragment {
     }
 
     private void setView() {
-        TextView titleTV = (TextView) mRoot.findViewById(R.id.main_title_tv);
-        titleTV.setText(R.string.module_option);
     }
 }

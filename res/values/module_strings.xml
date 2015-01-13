@@ -1,9 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <resources>
-    <string name="module_common_knowledge">常识普及</string>
-    <string name="module_map_navigate">地图导航</string>
-    <string name="module_utility_tool">实用工具</string>
-    <string name="module_my_outdoor_sport">我的户外</string>
-    <string name="module_option">应用设置</string>
-    <string name="module_exit">退出应用</string>
-</resources>
+    </resources>

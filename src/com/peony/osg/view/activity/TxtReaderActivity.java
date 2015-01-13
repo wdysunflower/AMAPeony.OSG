@@ -3,7 +3,6 @@ package com.peony.osg.view.activity;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageButton;
 import android.widget.TextView;
 import com.peony.osg.R;
 import com.peony.osg.model.object.Catalog;
@@ -17,8 +16,20 @@ import java.io.InputStreamReader;
  */
 public class TxtReaderActivity extends Activity {
 
+    public interface OnChangePageListener {
+        public void setReader(TxtReaderActivity reader);
+
+        public void prePage();
+
+        public void nextPage();
+    }
+
     private Catalog mCatalog;
     private TextView mTXTFileText;
+    private View mPrePageBtn;
+    private View mNextPageBtn;
+
+    private OnChangePageListener mChangePagerL;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -32,9 +43,6 @@ public class TxtReaderActivity extends Activity {
     }
 
     private void initView() {
-        TextView titleTV = (TextView) findViewById(R.id.main_title_tv);
-        titleTV.setText(mCatalog.Title);
-
         mTXTFileText = (TextView) findViewById(R.id.txt_file_text);
     }
 
@@ -59,5 +67,30 @@ public class TxtReaderActivity extends Activity {
 
     public void onBackPress(View v) {
         this.finish();
+    }
+
+    public void onChangePage(View v) {
+        switch (v.getId()) {
+            case R.id.reader_pre_page:
+                if (mChangePagerL != null) {
+                    mChangePagerL.prePage();
+                }
+                break;
+            case R.id.reader_next_page:
+                if (mChangePagerL != null) {
+                    mChangePagerL.nextPage();
+                }
+                break;
+        }
+    }
+
+    public void setOnChangePagerListener(OnChangePageListener listener) {
+        mChangePagerL = listener;
+        mChangePagerL.setReader(this);
+    }
+
+    public void setBtnEnable(boolean pre, boolean next) {
+        mPrePageBtn.setEnabled(pre);
+        mNextPageBtn.setEnabled(next);
     }
 }

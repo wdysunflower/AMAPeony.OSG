@@ -8,9 +8,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ExpandableListView;
-import android.widget.TextView;
 import com.peony.osg.R;
 import com.peony.osg.model.manager.CatalogManager;
 import com.peony.osg.model.object.Catalog;
@@ -45,9 +43,6 @@ public class CommonKnowledgeFragment extends Fragment {
     }
 
     private void setView() {
-        TextView titleTV = (TextView) mRoot.findViewById(R.id.main_title_tv);
-        titleTV.setText(R.string.module_common_knowledge);
-
         mDirListView = (PinnedHeaderExpandableListView) mRoot.findViewById(R.id.dir_lv);
         mDirListView.setOnChildClickListener(onChildClick);
     }

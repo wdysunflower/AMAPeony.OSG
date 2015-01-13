@@ -5,6 +5,7 @@ import com.peony.osg.OSGApplication;
 import com.peony.osg.R;
 import com.peony.osg.model.object.Catalog;
 import com.peony.osg.util.GlobalMethod;
+import com.peony.osg.view.activity.TxtReaderActivity;
 
 import java.util.*;
 
@@ -15,6 +16,9 @@ public class CatalogManager {
 
     public ArrayList<Catalog> mGroupList;
     public ArrayList<List<Catalog>> mChildList;
+
+    private int mGroupPosition;
+    private int mChildPosition;
 
     public CatalogManager() {
         initData();
@@ -45,4 +49,21 @@ public class CatalogManager {
             mGroupList.add(group);
         }
     }
+
+    public TxtReaderActivity.OnChangePageListener onChangPageEvent = new TxtReaderActivity.OnChangePageListener() {
+        @Override
+        public void setReader(TxtReaderActivity reader) {
+
+        }
+
+        @Override
+        public void prePage() {
+
+        }
+
+        @Override
+        public void nextPage() {
+
+        }
+    };
 }
