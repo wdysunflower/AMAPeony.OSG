@@ -73,6 +73,7 @@ public class MainActivity extends Activity {
         resideMenu.setBackground(R.drawable.menu_background);
         resideMenu.attachToActivity(this);
         resideMenu.setScaleValue(0.6f);
+        resideMenu.setBGClick(true);
 
         for (int i = 0; i < items.size(); i++) {
             MenuItem menuItem = items.get(i);

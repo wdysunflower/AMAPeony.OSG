@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <RelativeLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="5dp"
+            android:background="@color/tool_bar_float_cl">
+        <Button android:id="@+id/location_search_btn"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="Pre"
+                android:layout_alignParentLeft="true"
+                android:onClick="locationSearch"/>
+        <!-- <TextView android:id="@+id/reader_next_page"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Next"
+                   android:layout_alignParentRight="true"
+                   android:onClick="onChangePage"/>-->
+    </RelativeLayout>
+
+    <TextView android:id="@+id/location_result_tv"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"/>
+
+    <com.peony.osg.view.widget.listview.PagingListView
+            android:id="@+id/poi_result_lv"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+</LinearLayout>
