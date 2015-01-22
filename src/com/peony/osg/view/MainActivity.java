@@ -5,6 +5,7 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.View;
 import android.widget.TextView;
 import com.peony.osg.R;
@@ -24,11 +25,10 @@ public class MainActivity extends Activity {
     private static ResideMenu resideMenu;
     private TextView mActionTitle;
 
-    private Fragment mCLFragment;
-    private Fragment mMNFragment;
-    private Fragment mMOSFragment;
-    private Fragment mUTFragment;
-    private Fragment mOptionFragment;
+    private Fragment mMineFragment;
+    private Fragment mSportFragment;
+    private Fragment mTeachFragment;
+    private Fragment mMapFragment;
 
     public static ResideMenu getMainResideMenu() {
         return resideMenu;
@@ -49,46 +49,43 @@ public class MainActivity extends Activity {
     }
 
     private void initMainFragment() {
-        mCLFragment = new CommonKnowledgeFragment();
-        mMNFragment = new MapNavigateFragment();
-        mUTFragment = new UtilityToolFragment();
-        mMOSFragment = new MyOutdoorSportFragment();
-        mOptionFragment = new OptionFragment();
+        mMineFragment = new MineFragment();
+        mSportFragment = new SportFragment();
+        mTeachFragment = new TeachFragment();
+        mMapFragment = new MapFragment();
     }
 
     private void initMenuListView() {
         // 构造菜单数据
         List<MenuItem> items = new ArrayList<MenuItem>();
-        items.add(new MenuItem(R.string.menu_my_outdoor_sport, R.drawable.ic_menu_common,
-                mMOSFragment));
-        items.add(new MenuItem(R.string.menu_option, R.drawable.ic_menu_common, mOptionFragment));
+        MenuItem mineItem =
+                new MenuItem(R.string.menu_mine, R.drawable.user_default_icon, mMineFragment);
 
-        items.add(new MenuItem(R.string.menu_common_knowledge, R.drawable.ic_menu_common,
-                mCLFragment));
-        items.add(new MenuItem(R.string.menu_map_navigate, R.drawable.ic_menu_common, mMNFragment));
-        items.add(new MenuItem(R.string.menu_utility_tool, R.drawable.ic_menu_common, mUTFragment));
+        items.add(new MenuItem(R.string.menu_sport, R.drawable.menu_activity_icon, mSportFragment));
+        items.add(new MenuItem(R.string.menu_teach, R.drawable.menu_teach_icon, mTeachFragment));
+        items.add(new MenuItem(R.string.menu_map, R.drawable.menu_map_icon, mMapFragment));
 
         // 构造菜单控件
         resideMenu = new ResideMenu(this);
-        resideMenu.setBackground(R.drawable.menu_background);
+        resideMenu.setBackground(R.drawable.menu_main_bg);
         resideMenu.attachToActivity(this);
         resideMenu.setScaleValue(0.6f);
         resideMenu.setBGClick(true);
+
+        View mineMenu = getLayoutInflater().inflate(R.layout.menu_mine_item, null);
+        mineMenu.setOnClickListener(menuItemOnClick);
+        mineMenu.setTag(mineItem);
+        resideMenu.setMainMenu(mineMenu);
 
         for (int i = 0; i < items.size(); i++) {
             MenuItem menuItem = items.get(i);
             ResideMenuItem item = new ResideMenuItem(this, menuItem.mIconRes, menuItem.mTitleRes);
             item.setOnClickListener(menuItemOnClick);
             item.setTag(menuItem);
-            if (i < 2) {
-                resideMenu.addMenuItem(item, ResideMenu.DIRECTION_LEFT);
-            } else {
-                resideMenu.addMenuItem(item, ResideMenu.DIRECTION_RIGHT);
-            }
-            if (i == 0) {
-                setMainView(menuItem);
-            }
+            resideMenu.addMenuItem(item, ResideMenu.DIRECTION_RIGHT);
         }
+
+        setMainView(mineItem);
 
         // You can disable a direction by setting ->
         // resideMenu.setSwipeDirectionDisable(ResideMenu.DIRECTION_RIGHT);

@@ -7,23 +7,22 @@
     <LinearLayout
             android:id="@+id/layout_top"
             android:orientation="vertical"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
         <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="3dp"
-                android:background="#2ea3fe"/>
+                android:background="@drawable/action_bar_sp_up_cl"/>
 
         <FrameLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content">
-
             <Button
-                    android:layout_width="28dp"
-                    android:layout_height="28dp"
-                    android:background="@drawable/titlebar_menu_selector"
                     android:id="@+id/title_bar_left_menu"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:background="@drawable/user_default_icon"
                     android:layout_gravity="left|center_vertical"
                     android:layout_marginLeft="10dp"/>
 
@@ -31,24 +30,24 @@
                     android:id="@+id/action_bar_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="7dp"
+                    android:padding="3dp"
                     android:text="RESideMenu DEMO"
                     android:textSize="24sp"
                     android:textColor="#999999"
                     android:layout_gravity="center"/>
 
             <Button
-                    android:layout_width="28dp"
-                    android:layout_height="28dp"
-                    android:background="@drawable/titlebar_menu_selector"
                     android:id="@+id/title_bar_right_menu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/action_bar_menu_selector"
                     android:layout_gravity="right|center_vertical"
                     android:layout_marginRight="10dp"/>
         </FrameLayout>
 
         <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="5dp"
-                android:background="#ebebeb"/>
+                android:layout_height="2dp"
+                android:background="@drawable/action_bar_sp_bottom_cl"/>
     </LinearLayout>
 </RelativeLayout>

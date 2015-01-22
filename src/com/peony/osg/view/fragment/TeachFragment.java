@@ -19,7 +19,7 @@ import com.peony.osg.view.widget.listview.PinnedHeaderExpandableListView;
 /**
  * Created by wdynetposa on 2014/11/29.
  */
-public class CommonKnowledgeFragment extends Fragment {
+public class TeachFragment extends Fragment {
 
     private Context mContext;
     private View mRoot;
@@ -36,7 +36,7 @@ public class CommonKnowledgeFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        mRoot = inflater.inflate(R.layout.fragment_common_knowledge, container, false);
+        mRoot = inflater.inflate(R.layout.fragment_teach, container, false);
         setView();
         initManager();
         return mRoot;

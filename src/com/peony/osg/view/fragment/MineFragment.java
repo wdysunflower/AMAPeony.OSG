@@ -10,12 +10,12 @@ import com.peony.osg.R;
 /**
  * Created by wdynetposa on 2014/11/29.
  */
-public class OptionFragment extends Fragment {
+public class MineFragment extends Fragment {
     private View mRoot;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        mRoot = inflater.inflate(R.layout.fragment_option, container, false);
+        mRoot = inflater.inflate(R.layout.fragment_mine, container, false);
         setView();
         return mRoot;
     }

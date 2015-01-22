@@ -10,16 +10,15 @@ import com.peony.osg.R;
 /**
  * Created by wdynetposa on 2014/11/29.
  */
-public class MyOutdoorSportFragment extends Fragment {
+public class SportFragment extends Fragment {
     private View mRoot;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        mRoot = inflater.inflate(R.layout.fragment_my_outdoor_sport, container, false);
+        mRoot = inflater.inflate(R.layout.fragment_sport, container, false);
         setView();
         return mRoot;
     }
 
-    private void setView() {
-    }
+    private void setView() {}
 }

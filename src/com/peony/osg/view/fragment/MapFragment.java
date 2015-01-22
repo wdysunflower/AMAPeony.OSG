@@ -14,14 +14,14 @@ import com.peony.osg.view.MainActivity;
 /**
  * Created by wdynetposa on 2014/11/29.
  */
-public class MapNavigateFragment extends Fragment {
+public class MapFragment extends Fragment {
     private View mRoot;
     private AMap aMap;
     private MapView mapView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        mRoot = inflater.inflate(R.layout.fragment_map_navigate, container, false);
+        mRoot = inflater.inflate(R.layout.fragment_map, container, false);
         setView();
         iniMap(savedInstanceState);
         return mRoot;

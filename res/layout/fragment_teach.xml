@@ -37,7 +37,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:cacheColorHint="@null"
-                        android:childDivider="@drawable/main_back"
+                        android:childDivider="@drawable/action_bar_sp_bottom_cl"
                         android:childIndicatorLeft="0dp"
                         android:dividerHeight="1dp"
                         android:groupIndicator="@null"
@@ -48,7 +48,7 @@
 
         <View android:layout_width="match_parent"
               android:layout_height="@dimen/action_bar_sp_height"
-              android:background="@color/action_bar_sp_cl"
+              android:background="@color/list_item_sp_cl"
               android:layout_alignParentTop="true"/>
     </RelativeLayout>
 

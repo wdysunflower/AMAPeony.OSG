@@ -3,11 +3,11 @@
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
     <file url="file://$PROJECT_DIR$/res/drawable-xhdpi/btn_activity_back.png" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/res/drawable-xhdpi/ic_menu_common.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable-xhdpi/user_default_icon.png" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/res/layout/catalog_row_child.xml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/res/layout/menu_row_item.xml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/peony/osg/model/object/Category.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/peony/osg/model/object/MenuItem.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/com/peony/osg/view/adapter/MenuAdapter.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/peony/osg/view/widget/listview/PinnedHeaderExpandableListView.java" charset="UTF-8" />
   </component>
 </project>

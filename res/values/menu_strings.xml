@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-    <string name="menu_common_knowledge">常识普及</string>
-    <string name="menu_map_navigate">地图导航</string>
-    <string name="menu_utility_tool">实用工具</string>
-    <string name="menu_my_outdoor_sport">我的户外</string>
-    <string name="menu_option">应用设置</string>
+    <string name="menu_mine">我的户外</string>
+
+    <string name="menu_sport">户外活动</string>
+    <string name="menu_teach">户外教学</string>
+    <string name="menu_map">地图导航</string>
 </resources>

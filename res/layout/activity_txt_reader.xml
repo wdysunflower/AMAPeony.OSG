@@ -27,7 +27,7 @@
 
         <View android:layout_width="match_parent"
               android:layout_height="@dimen/action_bar_sp_height"
-              android:background="@color/action_bar_sp_cl"
+              android:background="@color/list_item_sp_cl"
               android:layout_alignParentTop="true"/>
 
         <include android:layout_width="match_parent"

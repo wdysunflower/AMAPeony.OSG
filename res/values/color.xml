@@ -1,9 +1,13 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-    <color name="action_bar_title_cl">#5fabd7</color>
-    <color name="action_bar_sp_cl">#37000000</color>
+    <color name="action_bar_title_cl">#ffffff</color>
+    <drawable name="action_bar_sp_up_cl">#2ea3fe</drawable>
+    <drawable name="action_bar_sp_bottom_cl">#ebebeb</drawable>
+
     <color name="group_bar_title_cl">#a4bfcf</color>
     <color name="tool_bar_float_cl">#c8a4bfcf</color>
 
     <color name="sub_text_cl">#cdcece</color>
+
+    <color name="list_item_sp_cl">#ebebeb</color>
 </resources>

@@ -13,31 +13,38 @@
     <ImageView
             android:id="@+id/iv_shadow"
             android:background="@drawable/shadow"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:scaleType="fitXY"/>
 
     <ScrollView
             android:id="@+id/sv_left_menu"
             android:scrollbars="none"
             android:paddingLeft="30dp"
-            android:layout_width="150dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="left|center_vertical">
-        <LinearLayout
-                android:id="@+id/layout_left_menu"
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            <RelativeLayout
+                    android:id="@+id/left_main_menu_rl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
 
-        </LinearLayout>
+            <LinearLayout
+                    android:id="@+id/layout_left_menu"
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+        </RelativeLayout>
     </ScrollView>
 
     <ScrollView
             android:id="@+id/sv_right_menu"
             android:scrollbars="none"
             android:paddingRight="30dp"
-            android:layout_width="150dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right|center_vertical">
         <LinearLayout
@@ -45,9 +52,6 @@
                 android:orientation="vertical"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="right">
-
-        </LinearLayout>
+                android:gravity="right"/>
     </ScrollView>
-
 </FrameLayout>

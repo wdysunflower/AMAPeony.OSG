@@ -7,10 +7,7 @@ import android.graphics.Rect;
 import android.util.DisplayMetrics;
 import android.view.*;
 import android.view.animation.AnimationUtils;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.ScrollView;
+import android.widget.*;
 import com.nineoldandroids.animation.Animator;
 import com.nineoldandroids.animation.AnimatorSet;
 import com.nineoldandroids.animation.ObjectAnimator;
@@ -38,20 +35,32 @@ public class ResideMenu extends FrameLayout {
     private ScrollView scrollViewRightMenu;
     private ScrollView scrollViewMenu;
 
-    /** the activity that view attach to */
+    private RelativeLayout layoutLeftMainMenu;
+
+    /**
+     * the activity that view attach to
+     */
     private Activity activity;
-    /** the decorview of the activity */
+    /**
+     * the decorview of the activity
+     */
     private ViewGroup viewDecor;
-    /** the viewgroup of the activity */
+    /**
+     * the viewgroup of the activity
+     */
     private TouchDisableView viewActivity;
-    /** the flag of menu open status */
+    /**
+     * the flag of menu open status
+     */
     private boolean isOpened;
 
     private GestureDetector gestureDetector;
     private float shadowAdjustScaleX;
     private float shadowAdjustScaleY;
 
-    /** the view which don't want to intercept touch event */
+    /**
+     * the view which don't want to intercept touch event
+     */
     private List<View> ignoredViews;
     private List<ResideMenuItem> leftMenuItems;
     private List<ResideMenuItem> rightMenuItems;
@@ -81,6 +90,7 @@ public class ResideMenu extends FrameLayout {
         imageViewShadow = (ImageView) findViewById(R.id.iv_shadow);
         layoutLeftMenu = (LinearLayout) findViewById(R.id.layout_left_menu);
         layoutRightMenu = (LinearLayout) findViewById(R.id.layout_right_menu);
+        layoutLeftMainMenu = (RelativeLayout) findViewById(R.id.left_main_menu_rl);
         imageViewBackground = (ImageView) findViewById(R.id.iv_background);
     }
 
@@ -92,7 +102,7 @@ public class ResideMenu extends FrameLayout {
         // setFitsSystemWindows(boolean)
         // in api14+ devices.
         this.setPadding(viewActivity.getPaddingLeft() + insets.left, viewActivity.getPaddingTop()
-                + insets.top, viewActivity.getPaddingRight() + insets.right,
+                        + insets.top, viewActivity.getPaddingRight() + insets.right,
                 viewActivity.getPaddingBottom() + insets.bottom);
         insets.left = insets.top = insets.right = insets.bottom = 0;
         return true;
@@ -172,9 +182,11 @@ public class ResideMenu extends FrameLayout {
         scaleDirection = direction;
     }
 
-    /***************************
+    /**
+     * ************************
      * Private Method
-     ***************************/
+     * *************************
+     */
     private OnClickListener viewActivityOnClickListener = new OnClickListener() {
         @Override
         public void onClick(View view) {
@@ -226,7 +238,6 @@ public class ResideMenu extends FrameLayout {
      * @return
      */
     private AnimatorSet buildScaleDownAnimation(View target, float targetScaleX, float targetScaleY) {
-
         AnimatorSet scaleDown = new AnimatorSet();
         scaleDown.playTogether(ObjectAnimator.ofFloat(target, "scaleX", targetScaleX),
                 ObjectAnimator.ofFloat(target, "scaleY", targetScaleY));
@@ -264,7 +275,7 @@ public class ResideMenu extends FrameLayout {
 
     private void showScrollViewMenu(ScrollView scrollViewMenu) {
         if (scrollViewMenu != null && scrollViewMenu.getParent() == null) {
-            addView(scrollViewMenu);
+            addView(scrollViewMenu, 1);
         }
     }
 
@@ -470,6 +481,10 @@ public class ResideMenu extends FrameLayout {
         rebuildMenu();
     }
 
+    public void setMainMenu(View menu) {
+        layoutLeftMainMenu.addView(menu);
+    }
+
     /**
      * if there ware some view you don't want reside menu to intercept their touch event,you can use
      * the method to set.
@@ -482,7 +497,7 @@ public class ResideMenu extends FrameLayout {
 
     /**
      * remove the view from ignored view list;
-     * 
+     *
      * @param v
      */
     public void removeIgnoredView(View v) {
