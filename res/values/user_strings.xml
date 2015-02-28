@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="intro_entry_enter_label">动起来</string>
+
+    <string name="splash_tip_default_text">今天天气不错！赶紧外出活动下</string>
+</resources>

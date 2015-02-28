@@ -1,9 +1,6 @@
 package com.peony.osg.model.base;
 
 import android.content.Context;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import com.peony.osg.OSGApplication;
 import com.peony.osg.model.data.DaoMaster;
 
 import java.util.List;
@@ -11,10 +8,11 @@ import java.util.List;
 /**
  * Created by wdynetposa on 2015/1/28.
  */
-public abstract class ManagerBase<T> {
+public abstract class DaoBase<T> extends VMBase {
     protected DaoMaster.DevOpenHelper daoHelper;
 
-    public ManagerBase(Context context) {
+    protected DaoBase(Context context) {
+        super(context);
         daoHelper = new DaoMaster.DevOpenHelper(context, "osg-db", null);
         initData();
     }

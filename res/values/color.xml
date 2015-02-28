@@ -10,4 +10,8 @@
     <color name="sub_text_cl">#cdcece</color>
 
     <color name="list_item_sp_cl">#ebebeb</color>
+
+
+    <color name="text_white">#ffffff</color>
+    <color name="text_black">#000000</color>
 </resources>

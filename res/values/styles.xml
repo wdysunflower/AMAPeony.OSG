@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <style name="Theme.NoTitle" parent="@android:style/Theme.Light">
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.Portrait" parent="@android:style/Theme.Light">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:screenOrientation">portrait</item>
+    </style>
+
     <style name="Theme.Main" parent="@style/StyledIndicators">
         <item name="android:windowNoTitle">true</item>
+        <item name="android:screenOrientation">portrait</item>
     </style>
 </resources>

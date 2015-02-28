@@ -2,7 +2,7 @@ package com.peony.osg.model.manager;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
-import com.peony.osg.model.base.ManagerBase;
+import com.peony.osg.model.base.DaoBase;
 import com.peony.osg.model.data.DBActivity;
 import com.peony.osg.model.data.DBActivityDao;
 import com.peony.osg.model.data.DaoMaster;
@@ -11,7 +11,7 @@ import com.peony.osg.model.data.DaoSession;
 /**
  * Created by wdynetposa on 2015/1/28.
  */
-public class ActivityManager extends ManagerBase<DBActivity> {
+public class ActivityManager extends DaoBase<DBActivity> {
 
     public ActivityManager(Context context) {
         super(context);

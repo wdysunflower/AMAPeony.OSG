@@ -35,7 +35,10 @@ public class DBActivityDao extends AbstractDao<DBActivity, Long> {
         public final static Property EndTime = new Property(9, java.util.Date.class, "endTime", false, "END_TIME");
         public final static Property Description = new Property(10, String.class, "description", false, "DESCRIPTION");
         public final static Property Images = new Property(11, String.class, "images", false, "IMAGES");
+        public final static Property JoinNum = new Property(12, Integer.class, "joinNum", false, "JOIN_NUM");
     };
+
+    private DaoSession daoSession;
 
 
     public DBActivityDao(DaoConfig config) {
@@ -44,6 +47,7 @@ public class DBActivityDao extends AbstractDao<DBActivity, Long> {
     
     public DBActivityDao(DaoConfig config, DaoSession daoSession) {
         super(config, daoSession);
+        this.daoSession = daoSession;
     }
 
     /** Creates the underlying database table. */
@@ -61,7 +65,8 @@ public class DBActivityDao extends AbstractDao<DBActivity, Long> {
                 "'BEGIN_TIME' INTEGER," + // 8: beginTime
                 "'END_TIME' INTEGER," + // 9: endTime
                 "'DESCRIPTION' TEXT," + // 10: description
-                "'IMAGES' TEXT);"); // 11: images
+                "'IMAGES' TEXT," + // 11: images
+                "'JOIN_NUM' INTEGER);"); // 12: joinNum
     }
 
     /** Drops the underlying database table. */
@@ -130,6 +135,17 @@ public class DBActivityDao extends AbstractDao<DBActivity, Long> {
         if (images != null) {
             stmt.bindString(12, images);
         }
+ 
+        Integer joinNum = entity.getJoinNum();
+        if (joinNum != null) {
+            stmt.bindLong(13, joinNum);
+        }
+    }
+
+    @Override
+    protected void attachEntity(DBActivity entity) {
+        super.attachEntity(entity);
+        entity.__setDaoSession(daoSession);
     }
 
     /** @inheritdoc */
@@ -153,7 +169,8 @@ public class DBActivityDao extends AbstractDao<DBActivity, Long> {
             cursor.isNull(offset + 8) ? null : new java.util.Date(cursor.getLong(offset + 8)), // beginTime
             cursor.isNull(offset + 9) ? null : new java.util.Date(cursor.getLong(offset + 9)), // endTime
             cursor.isNull(offset + 10) ? null : cursor.getString(offset + 10), // description
-            cursor.isNull(offset + 11) ? null : cursor.getString(offset + 11) // images
+            cursor.isNull(offset + 11) ? null : cursor.getString(offset + 11), // images
+            cursor.isNull(offset + 12) ? null : cursor.getInt(offset + 12) // joinNum
         );
         return entity;
     }
@@ -173,6 +190,7 @@ public class DBActivityDao extends AbstractDao<DBActivity, Long> {
         entity.setEndTime(cursor.isNull(offset + 9) ? null : new java.util.Date(cursor.getLong(offset + 9)));
         entity.setDescription(cursor.isNull(offset + 10) ? null : cursor.getString(offset + 10));
         entity.setImages(cursor.isNull(offset + 11) ? null : cursor.getString(offset + 11));
+        entity.setJoinNum(cursor.isNull(offset + 12) ? null : cursor.getInt(offset + 12));
      }
     
     /** @inheritdoc */

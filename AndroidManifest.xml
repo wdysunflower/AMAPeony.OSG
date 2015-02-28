@@ -25,16 +25,26 @@
                 android:name="com.amap.api.v2.apikey"
                 android:value="2dd93753c42e9bb86e3bed67f5d5527d"/>
 
-        <activity android:name=".view.MainActivity"
+        <activity android:name=".view.StartPageActivity"
                   android:label="@string/app_name"
-                  android:theme="@style/Theme.Main">
+                  android:theme="@style/Theme.Portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
 
-        <activity android:name=".view.activity.TxtReaderActivity"/>
-        <activity android:name=".view.activity.MapLocationActivity"/>
+        <activity android:name=".view.LoginActivity"
+                  android:theme="@style/Theme.Portrait"/>
+        <activity android:name=".view.SignUpActivity"
+                  android:theme="@style/Theme.Portrait"/>
+
+        <activity android:name=".view.MainActivity"
+                  android:theme="@style/Theme.Main"/>
+
+        <activity android:name=".view.activity.TxtReaderActivity"
+                  android:theme="@style/Theme.Portrait"/>
+        <activity android:name=".view.activity.MapLocationActivity"
+                  android:theme="@style/Theme.Portrait"/>
     </application>
 </manifest>
