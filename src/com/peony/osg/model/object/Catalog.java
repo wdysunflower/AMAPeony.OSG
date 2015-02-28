@@ -1,14 +1,14 @@
 package com.peony.osg.model.object;
 
 import com.peony.osg.OSGApplication;
-import com.peony.osg.model.base.ModelBase;
+import com.peony.osg.model.base.UIBase;
 
 import java.io.Serializable;
 
 /**
  * Created by wdynetposa on 2014/11/29.
  */
-public class Catalog extends ModelBase implements Serializable {
+public class Catalog extends UIBase implements Serializable {
 
 
     /**

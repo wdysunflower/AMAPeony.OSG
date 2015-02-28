@@ -14,7 +14,6 @@ import com.peony.osg.model.manager.CatalogManager;
 import com.peony.osg.model.object.Catalog;
 import com.peony.osg.view.activity.TxtReaderActivity;
 import com.peony.osg.view.adapter.CatalogAdapter;
-import com.peony.osg.view.widget.listview.PinnedHeaderExpandableListView;
 
 /**
  * Created by wdynetposa on 2014/11/29.
@@ -23,7 +22,7 @@ public class TeachFragment extends Fragment {
 
     private Context mContext;
     private View mRoot;
-    private PinnedHeaderExpandableListView mDirListView;
+    //private PinnedHeaderExpandableListView mDirListView;
 
     private CatalogManager mCatalogM;
     private CatalogAdapter mCatalogA;
@@ -43,17 +42,17 @@ public class TeachFragment extends Fragment {
     }
 
     private void setView() {
-        mDirListView = (PinnedHeaderExpandableListView) mRoot.findViewById(R.id.dir_lv);
-        mDirListView.setOnChildClickListener(onChildClick);
+//        mDirListView = (PinnedHeaderExpandableListView) mRoot.findViewById(R.id.dir_lv);
+//        mDirListView.setOnChildClickListener(onChildClick);
     }
 
     private void initManager() {
-        mCatalogM = new CatalogManager();
-        mCatalogA = new CatalogAdapter(mContext, mCatalogM.mGroupList, mCatalogM.mChildList);
-        mDirListView.setAdapter(mCatalogA);
-        for (int i = 0, count = mDirListView.getCount(); i < count; i++) {
-            mDirListView.expandGroup(i);
-        }
+        // mCatalogM = new CatalogManager();
+        // mCatalogA = new CatalogAdapter(mContext, mCatalogM.mGroupList, mCatalogM.mChildList);
+        // mDirListView.setAdapter(mCatalogA);
+        // for (int i = 0, count = mDirListView.getCount(); i < count; i++) {
+        // mDirListView.expandGroup(i);
+        // }
     }
 
     ExpandableListView.OnChildClickListener onChildClick =

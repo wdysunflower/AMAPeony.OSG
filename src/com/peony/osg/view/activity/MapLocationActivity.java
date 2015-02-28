@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.location.Location;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.amap.api.location.AMapLocation;
@@ -21,7 +22,6 @@ import com.peony.osg.R;
 import com.peony.osg.model.object.MapLocation;
 import com.peony.osg.util.ToastUtil;
 import com.peony.osg.view.adapter.MapLocationAdapter;
-import com.peony.osg.view.widget.listview.PagingListView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,7 +31,7 @@ import java.util.List;
  */
 public class MapLocationActivity extends Activity {
     private TextView mLocationResultTV;
-    private PagingListView mPoiResultLV;
+    private ListView mPoiResultLV;
 
     // 定位
     private LocationManagerProxy mAMapLocationManager;
@@ -64,14 +64,14 @@ public class MapLocationActivity extends Activity {
 
     private void initView() {
         mLocationResultTV = (TextView) findViewById(R.id.location_result_tv);
-        mPoiResultLV = (PagingListView) findViewById(R.id.poi_result_lv);
+        //mPoiResultLV = (PagingListView) findViewById(R.id.poi_result_lv);
     }
 
     private void initData() {
         locationAdapter = new MapLocationAdapter(this);
-        mPoiResultLV.setHasMoreItems(true);
+       // mPoiResultLV.setHasMoreItems(true);
         mPoiResultLV.setAdapter(locationAdapter);
-        mPoiResultLV.setPagingListener(pagingEvent);
+        //mPoiResultLV.setPagingListener(pagingEvent);
 
         locationEvent = new OnAMapLocationEvent();
         mAMapLocationManager = LocationManagerProxy.getInstance(this);
@@ -83,21 +83,21 @@ public class MapLocationActivity extends Activity {
                 locationEvent);
     }
 
-    private PagingListView.onPagingListener pagingEvent = new PagingListView.onPagingListener() {
-        @Override
-        public void onLoadMoreItems() {
-            if (query != null && poiSearch != null && poiResult != null) {
-                if (poiResult.getPageCount() - 1 > currentPage) {
-                    currentPage++;
-
-                    query.setPageNum(currentPage);// 设置查后一页
-                    poiSearch.searchPOIAsyn();
-                } else {
-                    ToastUtil.show(MapLocationActivity.this, R.string.no_result);
-                }
-            }
-        }
-    };
+//    private PagingListView.onPagingListener pagingEvent = new PagingListView.onPagingListener() {
+//        @Override
+//        public void onLoadMoreItems() {
+//            if (query != null && poiSearch != null && poiResult != null) {
+//                if (poiResult.getPageCount() - 1 > currentPage) {
+//                    currentPage++;
+//
+//                    query.setPageNum(currentPage);// 设置查后一页
+//                    poiSearch.searchPOIAsyn();
+//                } else {
+//                    ToastUtil.show(MapLocationActivity.this, R.string.no_result);
+//                }
+//            }
+//        }
+//    };
 
     private class OnAMapLocationEvent implements AMapLocationListener {
 
@@ -210,7 +210,7 @@ public class MapLocationActivity extends Activity {
                                 @Override
                                 public void run() {
                                     locationAdapter.addList(mapLocationList);
-                                    mPoiResultLV.onFinishLoading(true);
+                                    //mPoiResultLV.onFinishLoading(true);
                                 }
                             });
                         } else if (suggestionCities != null && suggestionCities.size() > 0) {
@@ -218,7 +218,7 @@ public class MapLocationActivity extends Activity {
                         } else {
                             // ToastUtil.show(PoiAroundSearchActivity.this,
                             // R.string.no_result);
-                            mPoiResultLV.onFinishLoading(false);
+                            //mPoiResultLV.onFinishLoading(false);
                         }
                     }
                 } else {

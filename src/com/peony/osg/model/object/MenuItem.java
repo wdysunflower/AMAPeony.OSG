@@ -1,12 +1,12 @@
 package com.peony.osg.model.object;
 
 import android.app.Fragment;
-import com.peony.osg.model.base.ModelBase;
+import com.peony.osg.model.base.UIBase;
 
 /**
  * 菜单项
  */
-public class MenuItem extends ModelBase {
+public class MenuItem extends UIBase {
     // Res
     public int mIconRes;
     public Fragment mRelationFragment;

@@ -1,8 +1,8 @@
 package com.peony.osg.model.object;
 
-import com.peony.osg.model.base.ModelBase;
+import com.peony.osg.model.base.UIBase;
 
-public class Category  extends ModelBase {
+public class Category  extends UIBase {
 
     /**
      * Constructor

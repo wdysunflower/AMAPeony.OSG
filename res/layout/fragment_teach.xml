@@ -23,7 +23,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/icon"/>
-
             </LinearLayout>
 
             <LinearLayout
@@ -43,7 +42,6 @@
                         android:groupIndicator="@null"
                         android:scrollbarAlwaysDrawHorizontalTrack="false"/>
             </LinearLayout>
-
         </LinearLayout>
 
         <View android:layout_width="match_parent"
@@ -51,5 +49,4 @@
               android:background="@color/list_item_sp_cl"
               android:layout_alignParentTop="true"/>
     </RelativeLayout>
-
 </LinearLayout>

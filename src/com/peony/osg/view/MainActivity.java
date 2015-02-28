@@ -1,11 +1,10 @@
 package com.peony.osg.view;
 
-import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
-import android.view.Menu;
+import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.widget.TextView;
 import com.peony.osg.R;
@@ -20,11 +19,12 @@ import java.util.List;
 /**
  * Created by wdynetposa on 2014/11/26.
  */
-public class MainActivity extends Activity {
+public class MainActivity extends FragmentActivity {
 
     private static ResideMenu resideMenu;
     private TextView mActionTitle;
 
+    // 组件
     private Fragment mMineFragment;
     private Fragment mSportFragment;
     private Fragment mTeachFragment;

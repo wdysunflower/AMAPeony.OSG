@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="mine_activity_tab_title">活动</string>
+    <string name="mine_road_book_tab_title">路书</string>
+    <string name="mine_favorites_tab_title">收藏</string>
+</resources>
