@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="DaoCore">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libs/DaoCore.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
