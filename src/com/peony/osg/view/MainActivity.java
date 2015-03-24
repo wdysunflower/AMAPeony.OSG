@@ -3,13 +3,17 @@ package com.peony.osg.view;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import com.peony.osg.R;
+import com.peony.osg.model.manager.UserManager;
 import com.peony.osg.model.object.MenuItem;
-import com.peony.osg.view.fragment.*;
+import com.peony.osg.view.mainframe.*;
 import com.peony.osg.view.widget.menu.ResideMenu;
 import com.peony.osg.view.widget.menu.ResideMenuItem;
 
@@ -24,12 +28,6 @@ public class MainActivity extends FragmentActivity {
     private static ResideMenu resideMenu;
     private TextView mActionTitle;
 
-    // 组件
-    private Fragment mMineFragment;
-    private Fragment mSportFragment;
-    private Fragment mTeachFragment;
-    private Fragment mMapFragment;
-
     public static ResideMenu getMainResideMenu() {
         return resideMenu;
     }
@@ -40,31 +38,15 @@ public class MainActivity extends FragmentActivity {
         setContentView(R.layout.activity_main);
 
         initView();
-        initMainFragment();
-        initMenuListView();
+        initMenuView();
+        initListener();
     }
 
     private void initView() {
         mActionTitle = (TextView) findViewById(R.id.action_bar_title);
     }
 
-    private void initMainFragment() {
-        mMineFragment = new MineFragment();
-        mSportFragment = new SportFragment();
-        mTeachFragment = new TeachFragment();
-        mMapFragment = new MapFragment();
-    }
-
-    private void initMenuListView() {
-        // 构造菜单数据
-        List<MenuItem> items = new ArrayList<MenuItem>();
-        MenuItem mineItem =
-                new MenuItem(R.string.menu_mine, R.drawable.user_default_icon, mMineFragment);
-
-        items.add(new MenuItem(R.string.menu_sport, R.drawable.menu_activity_icon, mSportFragment));
-        items.add(new MenuItem(R.string.menu_teach, R.drawable.menu_teach_icon, mTeachFragment));
-        items.add(new MenuItem(R.string.menu_map, R.drawable.menu_map_icon, mMapFragment));
-
+    private void initMenuView() {
         // 构造菜单控件
         resideMenu = new ResideMenu(this);
         resideMenu.setBackground(R.drawable.menu_main_bg);
@@ -72,29 +54,77 @@ public class MainActivity extends FragmentActivity {
         resideMenu.setScaleValue(0.6f);
         resideMenu.setBGClick(true);
 
+        // 左侧自定义菜单
+        MenuItem mineItem =
+                new MenuItem(R.string.menu_mine, R.drawable.user_default_icon, MineFragment.class);
+
         View mineMenu = getLayoutInflater().inflate(R.layout.menu_mine_item, null);
         mineMenu.setOnClickListener(menuItemOnClick);
         mineMenu.setTag(mineItem);
         resideMenu.setMainMenu(mineMenu);
 
-        for (int i = 0; i < items.size(); i++) {
-            MenuItem menuItem = items.get(i);
+        // 左侧列表菜单
+        List<MenuItem> leftMenus = new ArrayList<MenuItem>();
+        leftMenus.add(new MenuItem(R.string.menu_mine_sport, R.drawable.menu_mine_sport_icon,
+                SportFragment.class));
+        leftMenus.add(new MenuItem(R.string.menu_mine_course, R.drawable.menu_mine_course_icon,
+                TeachFragment.class));
+        leftMenus.add(new MenuItem(R.string.menu_mine_road, R.drawable.menu_mine_road_icon,
+                MapFragment.class));
+        leftMenus.add(new MenuItem(R.string.menu_mine_tool, R.drawable.menu_mine_tool_icon,
+                MapFragment.class));
+        leftMenus.add(new MenuItem(-1, R.drawable.menu_mine_calendar_icon, MapFragment.class));
+
+        for (int i = 0; i < leftMenus.size(); i++) {
+            MenuItem menuItem = leftMenus.get(i);
+            ResideMenuItem item = new ResideMenuItem(this, menuItem.mIconRes, menuItem.mTitleRes);
+            item.setOnClickListener(menuItemOnClick);
+            item.setTag(menuItem);
+            resideMenu.addMenuItem(item, ResideMenu.DIRECTION_LEFT);
+        }
+
+        // 右侧列表菜单
+        List<MenuItem> rightMenus = new ArrayList<MenuItem>();
+        rightMenus.add(new MenuItem(R.string.menu_sport, R.drawable.menu_sport_icon,
+                SportFragment.class));
+        rightMenus.add(new MenuItem(R.string.menu_teach, R.drawable.menu_teach_icon,
+                TeachFragment.class));
+        rightMenus
+                .add(new MenuItem(R.string.menu_map, R.drawable.menu_map_icon, MapFragment.class));
+
+        for (int i = 0; i < rightMenus.size(); i++) {
+            MenuItem menuItem = rightMenus.get(i);
             ResideMenuItem item = new ResideMenuItem(this, menuItem.mIconRes, menuItem.mTitleRes);
             item.setOnClickListener(menuItemOnClick);
             item.setTag(menuItem);
             resideMenu.addMenuItem(item, ResideMenu.DIRECTION_RIGHT);
         }
 
+        // 设置当前视图
         setMainView(mineItem);
+    }
 
-        // You can disable a direction by setting ->
-        // resideMenu.setSwipeDirectionDisable(ResideMenu.DIRECTION_RIGHT);
-        findViewById(R.id.title_bar_left_menu).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                resideMenu.openMenu(ResideMenu.DIRECTION_LEFT);
-            }
-        });
+    private void initListener() {
+        // 顶部工具栏
+        if (UserManager.isLogin()) {
+            findViewById(R.id.title_bar_left_menu).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    resideMenu.openMenu(ResideMenu.DIRECTION_LEFT);
+                }
+            });
+        } else {
+            Button leftBtn = (Button) findViewById(R.id.title_bar_left_menu);
+            leftBtn.setBackgroundResource(R.drawable.user_login_on_title_icon);
+            leftBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                    startActivity(intent);
+                }
+            });
+        }
+
         findViewById(R.id.title_bar_right_menu).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -118,7 +148,11 @@ public class MainActivity extends FragmentActivity {
         mActionTitle.setText(menuItem.mTitleRes);
         FragmentManager fm = getFragmentManager();
         FragmentTransaction transaction = fm.beginTransaction();
-        transaction.replace(R.id.main_fl, menuItem.mRelationFragment);
-        transaction.commit();
+
+        Fragment fragment = MainFragmentManager.getFragment(menuItem.relationData);
+        if (fragment != null) {
+            transaction.replace(R.id.main_fl, fragment);
+            transaction.commit();
+        }
     }
 }

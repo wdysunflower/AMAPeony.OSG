@@ -1,6 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <string name="menu_mine">我的户外</string>
+    <string name="menu_mine_sport">我的活动</string>
+    <string name="menu_mine_course">我的课程</string>
+    <string name="menu_mine_road">我的路书</string>
+    <string name="menu_mine_tool">我的工具</string>
+    <string name="menu_mine_calendar"></string>
 
     <string name="menu_sport">户外活动</string>
     <string name="menu_teach">户外教学</string>

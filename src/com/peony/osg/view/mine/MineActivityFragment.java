@@ -34,7 +34,7 @@ public class MineActivityFragment extends Fragment {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                manager.addActivity();
+                //manager.addActivity();
             }
         });
     }

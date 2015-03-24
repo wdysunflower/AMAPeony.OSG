@@ -12,7 +12,6 @@
 
     <ImageView
             android:id="@+id/iv_shadow"
-            android:background="@drawable/shadow"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="fitXY"/>
@@ -24,12 +23,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="left|center_vertical">
-        <RelativeLayout
+        <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:orientation="vertical">
             <RelativeLayout
                     android:id="@+id/left_main_menu_rl"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
 
             <LinearLayout
@@ -37,7 +37,7 @@
                     android:orientation="vertical"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
-        </RelativeLayout>
+        </LinearLayout>
     </ScrollView>
 
     <ScrollView

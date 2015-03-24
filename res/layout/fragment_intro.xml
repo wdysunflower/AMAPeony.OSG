@@ -22,16 +22,17 @@
     </RelativeLayout>
 
     <RelativeLayout
-            android:id="@+id/intro_entry_rl"
+            android:id="@+id/intro_logged_entry_rl"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/intro_entry_bg"
             android:visibility="gone">
         <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
                 android:src="@drawable/icon"
-                android:layout_margin="100dp"/>
+                android:layout_marginTop="120dp"
+                android:layout_centerHorizontal="true"/>
 
         <Button
                 android:id="@+id/intro_entry_enter_btn"
@@ -39,9 +40,45 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="30dp"
                 android:paddingTop="10dp"
-                android:paddingBottom="10dp"
+                android:paddingBottom="20dp"
                 android:text="@string/intro_entry_enter_label"
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+            android:id="@+id/intro_not_logged_entry_rl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/intro_entry_bg"
+            android:visibility="gone">
+        <ImageView
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:src="@drawable/icon"
+                android:layout_marginTop="120dp"
+                android:layout_centerHorizontal="true"/>
+
+        <LinearLayout android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:orientation="vertical"
+                      android:layout_margin="30dp"
+                      android:layout_alignParentBottom="true"
+                      android:layout_centerHorizontal="true">
+            <Button
+                    android:id="@+id/intro_entry_login_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/intro_entry_login_label"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"/>
+
+            <Button
+                    android:id="@+id/intro_entry_look_around_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="@string/intro_entry_look_around_label"/>
+        </LinearLayout>
     </RelativeLayout>
 </RelativeLayout>

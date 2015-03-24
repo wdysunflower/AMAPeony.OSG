@@ -1,8 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
-    <file url="file://$PROJECT_DIR$/res/drawable-xhdpi/btn_activity_back.png" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/res/drawable-xhdpi/user_default_icon.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable-xxhdpi/btn_activity_back.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable-xxhdpi/login_bg.jpg" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable-xxhdpi/login_captcha_icon.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable-xxhdpi/login_do_btn_normal.9.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable-xxhdpi/login_do_btn_selected.9.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable-xxhdpi/login_input_bg.9.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable-xxhdpi/login_input_delete_icon.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable-xxhdpi/login_input_ed_bg.9.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable-xxhdpi/login_intro_tip.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable-xxhdpi/login_password_icon.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable-xxhdpi/login_sign_up_btn_normal.9.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable-xxhdpi/login_sign_up_btn_selected.9.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable-xxhdpi/login_username_icon.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable-xxhdpi/user_default_icon.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable-xxhdpi/white_back_icon_normal.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable-xxhdpi/white_back_icon_pressed.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable/login_do_btn_bg.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable/login_sign_up_btn_bg.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable/white_back_btn_icon.xml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/res/layout/catalog_row_child.xml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/res/layout/menu_row_item.xml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/peony/osg/model/object/Category.java" charset="UTF-8" />

@@ -19,7 +19,7 @@ public class ActivityManager extends DaoBase<DBActivity> {
 
     @Override
     protected void initData() {
-        addActivity();
+        // addActivity();
     }
 
     public void addActivity() {

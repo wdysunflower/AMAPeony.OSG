@@ -1,6 +1,23 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <string name="intro_entry_enter_label">动起来</string>
+    <string name="intro_entry_login_label">立即登录</string>
+    <string name="intro_entry_look_around_label">随便看看</string>
 
     <string name="splash_tip_default_text">今天天气不错！赶紧外出活动下</string>
+
+    <string name="login_username_hint">请输入用户名</string>
+    <string name="login_password_hint">请输入密码</string>
+
+    <string name="login_password_show_label">显示密码</string>
+    <string name="login_forget_pwd_label">忘记密码？</string>
+    <string name="login_do_label">登录</string>
+    <string name="login_sign_up_label">快速注册</string>
+
+    <string name="sign_up_title_label">快速注册</string>
+    <string name="sign_up_phone_num_hint">请输入您的手机号</string>
+    <string name="sign_up_password_hint">请输入密码</string>
+    <string name="sign_up_captcha_hint">6位短信验证码</string>
+    <string name="sign_up_captcha_label">获取验证码</string>
+    <string name="sign_up_do_label">注册</string>
 </resources>

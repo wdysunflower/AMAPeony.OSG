@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import com.peony.osg.R;
 
@@ -22,15 +23,7 @@ public class ResideMenuItem extends LinearLayout {
     public ResideMenuItem(Context context, int icon, int title) {
         super(context);
         initViews(context);
-        iv_icon.setImageResource(icon);
-        tv_title.setText(title);
-    }
-
-    public ResideMenuItem(Context context, int icon, String title) {
-        super(context);
-        initViews(context);
-        iv_icon.setImageResource(icon);
-        tv_title.setText(title);
+        setViews(icon, title);
     }
 
     private void initViews(Context context) {
@@ -66,5 +59,21 @@ public class ResideMenuItem extends LinearLayout {
      */
     public void setTitle(String title) {
         tv_title.setText(title);
+    }
+
+    private void setViews(int icon, int title) {
+        iv_icon.setImageResource(icon);
+
+        if (title < 0) {
+            RelativeLayout.LayoutParams layoutParams =
+                    (RelativeLayout.LayoutParams) iv_icon.getLayoutParams();
+            layoutParams.width = LayoutParams.WRAP_CONTENT;
+            layoutParams.height = LayoutParams.WRAP_CONTENT;
+            layoutParams.addRule(RelativeLayout.CENTER_HORIZONTAL);
+            iv_icon.setLayoutParams(layoutParams);
+            tv_title.setVisibility(GONE);
+        } else {
+            tv_title.setText(title);
+        }
     }
 }

@@ -35,15 +35,19 @@
         </activity>
 
         <activity android:name=".view.LoginActivity"
-                  android:theme="@style/Theme.Portrait"/>
+                  android:theme="@style/Theme.Portrait"
+                  android:windowSoftInputMode="adjustResize|stateHidden"/>
+
         <activity android:name=".view.SignUpActivity"
-                  android:theme="@style/Theme.Portrait"/>
+                  android:theme="@style/Theme.Portrait"
+                  android:windowSoftInputMode="adjustResize|stateHidden"/>
 
         <activity android:name=".view.MainActivity"
                   android:theme="@style/Theme.Main"/>
 
         <activity android:name=".view.activity.TxtReaderActivity"
                   android:theme="@style/Theme.Portrait"/>
+
         <activity android:name=".view.activity.MapLocationActivity"
                   android:theme="@style/Theme.Portrait"/>
     </application>

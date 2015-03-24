@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import com.peony.osg.OSGApplication;
 import com.peony.osg.R;
+import com.peony.osg.util.ConstDefine;
+import com.peony.osg.util.PreferencesHelper;
 import com.peony.osg.view.fragment.IntroFragment;
 import com.peony.osg.view.fragment.SplashFragment;
 
@@ -28,9 +30,12 @@ public class StartPageActivity extends FragmentActivity {
         FragmentManager fm = getFragmentManager();
         FragmentTransaction transaction = fm.beginTransaction();
         OSGApplication application = (OSGApplication) getApplication();
-        if (application.isFirst()) {
+
+        // 如果第一次或覆盖安装，显示介绍页；反之显示闪屏页
+        if (application.isFirstShow(this)) {
             mIntroFragment = new IntroFragment();
             transaction.replace(R.id.start_fl, mIntroFragment);
+            PreferencesHelper.setAppData(this, ConstDefine.IS_FIRST_SHOW, false);
         } else {
             mSplashFragment = new SplashFragment();
             transaction.replace(R.id.start_fl, mSplashFragment);

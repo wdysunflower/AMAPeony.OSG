@@ -9,7 +9,7 @@ import com.peony.osg.model.base.UIBase;
 public class MenuItem extends UIBase {
     // Res
     public int mIconRes;
-    public Fragment mRelationFragment;
+    public Class relationData;
 
     /**
      * Constructor
@@ -27,11 +27,11 @@ public class MenuItem extends UIBase {
      *
      * @param titleRes
      * @param iconRes
-     * @param fragment
+     * @param data
      */
-    public MenuItem(int titleRes, int iconRes, Fragment fragment) {
+    public MenuItem(int titleRes, int iconRes, Class data) {
         super(titleRes);
         mIconRes = iconRes;
-        mRelationFragment = fragment;
+        relationData = data;
     }
 }
